@@ -1,5 +1,6 @@
 package com.codeclan.example.employeeservice;
 
+import com.codeclan.example.employeeservice.models.Department;
 import com.codeclan.example.employeeservice.models.Employee;
 import com.codeclan.example.employeeservice.repositories.EmployeeRepository;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,10 @@ class EmployeeserviceApplicationTests {
 
 	@Test
 	public void createEmployee() {
-		Employee ross = new Employee("Ross Napier", 37, "ross-napier@hotmail.com");
+		Department department = new Department("Software Development");
+		departmentRepository.save(department);
+
+		Employee ross = new Employee("Ross", "Napier", "ross-napier@hotmail.com", department);
 		employeeRepository.save(ross);
 	}
 

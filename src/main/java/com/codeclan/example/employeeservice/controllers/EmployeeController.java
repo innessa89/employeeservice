@@ -20,8 +20,8 @@ public class EmployeeController {
         return employeeRepository.findAll();
     }
 
-    @GetMapping(value = "/pirates/{id}")
-    public Optional<Employee> getPirate(@PathVariable Long employeeNumber) {
-        return employeeRepository.findById(employeeNumber);
+    @GetMapping(value = "/employees/{id}")
+    public Optional<Employee> getEmployee(@PathVariable Long id) {
+        return employeeRepository.findById(id);
     }
 }
